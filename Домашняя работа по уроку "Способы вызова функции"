@@ -1,0 +1,12 @@
+def send_email(message, recipient, sender):
+    if '@' not in recipient and sender and ('.com' or '.ru' or '.net' not in recipient and sender):
+        print(f'Невозможно отправить письмо с адреса {sender} на адрес {recipient}')
+        return
+    if sender == recipient:
+        print('Нельзя отправить письмо самому себе!')
+    elif sender == 'university.help@gmail.com':
+        print('Нельзя отправить письмо самому себе!Письмо успешно отправлено')
+    else: print(f'НЕСТАНДАРТНЫЙ ОТПРАВИТЕЛЬ! Письмо отправлено с адреса {sender} на адрес {recipient}')
+
+
+send_email(message = input('Введите сообщение: '), recipient = input('Введите электронный адрес получателя: '), sender = input('Введите электронный адрес отправителя: '))
